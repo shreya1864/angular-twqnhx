@@ -1,8 +1,8 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
 	<h3>
-		<a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+		<a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
 			<img [src]="product.url" [style]="'width:200px'"/>
     {{product.name}}
     </a>
@@ -15,11 +15,6 @@
 	<button [style]="'background-color:green'" (click)="share(product.name)">
     Share
   </button>
-	<app-product-alerts (notify)="onNOtify()" [product]="product"></app-product-alerts>
-</div>
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+	<app-product-alerts (notify)="onNotify()" [product]="product"></app-product-alerts>
+</div>
