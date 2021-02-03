@@ -21,6 +21,10 @@ export class ProductDetailsComponent implements OnInit {
       params => {
         this.product = products[+params.get("productId")];
       },
+
+      // function nameOfFun(params) {
+
+      //}
       err => {
         console.log("Error!!");
       }
