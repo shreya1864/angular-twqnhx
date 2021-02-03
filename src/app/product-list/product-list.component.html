@@ -12,7 +12,7 @@
 		Description: {{product.description}}
 	</p>
 
-	<button (click)="share(product.name)">
+	<button [style]="'background-color:green'" (click)="share(product.name)">
     Share
   </button>
 	<app-product-alerts (notify)="onNOtify()" [product]="product"></app-product-alerts>
