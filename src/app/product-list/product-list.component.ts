@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { products } from '../products';
+import { products } from "../products";
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent {
   products = products;
@@ -13,8 +13,11 @@ export class ProductListComponent {
   share(productName) {
     window.alert(productName);
   }
-}
 
+  onNotify() {
+    window.alert("Sale Notification");
+  }
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
