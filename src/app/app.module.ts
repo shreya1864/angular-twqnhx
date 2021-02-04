@@ -28,7 +28,10 @@ import { InternalServerErrorComponent } from "./internal-server-error/internal-s
       { path: "shipping", component: ShippingComponent },
       { path: "page-not-found", component: PageNotFoundComponent },
       { path: "error", component: ErrorComponent },
-      { path: "internal-server-error", component: InternalServerErrorComponent },
+      {
+        path: "internal-server-error",
+        component: InternalServerErrorComponent
+      },
       { path: "**", component: PageNotFoundComponent }
     ])
   ],
