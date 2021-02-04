@@ -1,8 +1,11 @@
-<h2>Product Details</h2>
+<h2> Product Details </h2>
+
 <div>
-	<h3>{{product.name}}</h3>
-	<h3>{{product.price}}</h3>
-	<h3>{{product.description}}</h3>
+	<h3> Product Name: {{ product.name | uppercase }}</h3>
+	<h4> Discounted Price: {{ product.price | currency }}</h4>
+	<h4> Actual Price: {{ product.price | double | currency }}</h4>
+	<p> Product Description: {{ product.description }}</p>
 
 	<button (click) = "addToCart(product)">Add To Cart</button>
+
 </div>
