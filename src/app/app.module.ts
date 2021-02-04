@@ -12,8 +12,9 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
 import { CartService } from "./cart.service";
 import { CartComponent } from "./cart/cart.component";
 import { ShippingComponent } from "./shipping/shipping.component";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ErrorComponent } from './error/error.component';
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ErrorComponent } from "./error/error.component";
+import { InternalServerErrorComponent } from "./internal-server-error/internal-server-error.component";
 
 @NgModule({
   imports: [
@@ -24,7 +25,11 @@ import { ErrorComponent } from './error/error.component';
       { path: "", component: ProductListComponent },
       { path: "products/:productId", component: ProductDetailsComponent },
       { path: "cart", component: CartComponent },
-      { path: "shipping", component: ShippingComponent }
+      { path: "shipping", component: ShippingComponent },
+      { path: "page-not-found", component: PageNotFoundComponent },
+      { path: "error", component: ErrorComponent },
+      { path: "internal-server-error", component: InternalServerErrorComponent },
+      { path: "**", component: PageNotFoundComponent }
     ])
   ],
   declarations: [
@@ -36,7 +41,8 @@ import { ErrorComponent } from './error/error.component';
     CartComponent,
     ShippingComponent,
     PageNotFoundComponent,
-    ErrorComponent
+    ErrorComponent,
+    InternalServerErrorComponent
   ],
   bootstrap: [AppComponent],
   providers: [CartService]
