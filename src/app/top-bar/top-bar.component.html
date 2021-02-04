@@ -2,7 +2,7 @@
 	<h1>My Store</h1>
 </a>
 <div [style]="'color:white'">
-	Today's Date : {{date | date:format()}}
+	Today's Date : {{date | date:format() | uppercase}}
 </div>
 
 <button [style] = "'background-color:blue'" (click) = "toggleFormat()" >Toggle Date</button>
