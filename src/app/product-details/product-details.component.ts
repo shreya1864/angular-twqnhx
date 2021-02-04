@@ -16,7 +16,6 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
     //this.cartService.
     //const routeParams = this.route.snapshot.paramMap;
     //const productIdFromRoute = Number(routeParams.get("productId"));
@@ -32,5 +31,10 @@ export class ProductDetailsComponent implements OnInit {
         console.log("Error!!");
       }
     );
+  }
+
+  addToCart(product) {
+    this.cartService.addToCart(product);
+    window.alert("Product added to cart");
   }
 }
