@@ -7,8 +7,8 @@
     {{product.name}}
     </a>
 	</h3>
-	<p>Discounted Price: {{product.price | currency:"INR"}}</p>
-	<p>Actual Price: {{product.price | double | currency:"INR"}}</p>
+	<p>Discounted Price: {{product.price | currency: "INR"}}</p>
+	<p [style]="'text-decoration: line-through'">Actual Price: {{product.price | double | currency: "INR"}}</p>
 
 	<p *ngIf="product.description">
 		Description: {{product.description}}

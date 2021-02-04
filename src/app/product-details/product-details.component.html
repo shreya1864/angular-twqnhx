@@ -2,8 +2,8 @@
 
 <div>
 	<h3> Product Name: {{ product.name | uppercase }}</h3>
-	<h4> Discounted Price: {{ product.price | currency }}</h4>
-	<h4> Actual Price: {{ product.price | double | currency }}</h4>
+	<h4> Discounted Price: {{ product.price | currency: "INR" }}</h4>
+	<h4 [style]="'text-decoration: line-through'"> Actual Price: {{ product.price | double | currency: "INR" }}</h4>
 	<p> Product Description: {{ product.description }}</p>
 
 	<button (click) = "addToCart(product)">Add To Cart</button>
