@@ -17,6 +17,10 @@ export class TopBarComponent implements OnInit {
   format() {
     return this.toggle ? "shortDate" : "fullDate";
   }
+
+  toggleFormat() {
+    this.toggle = !this.toggle;
+  }
 }
 
 /*
