@@ -1,24 +1,32 @@
 <h3>Cart</h3>
-<a (click)="routeToError()"> Error Route</a>
-
+<a (click)="routeTo400()"> 404 Route</a>
+<a (click)="routeTo500()"> 500 Route</a>
+<a (click)="routeToGenericError()"> Error Route</a>
 <p>
-	<a routerLink="/shipping">Shipping Prices</a>
+  <a routerLink = "/shipping"> Shipping Prices</a>
 </p>
 
-<div *ngFor="let item of items">
-	<span> {{ item.name }} </span>
-	<span> {{ item.price | currency }} </span>
+
+<div *ngFor = "let item of items">
+  <span> {{ item.name }} </span>
+  <span> {{ item.price | currency }} </span>
 </div>
 
-<div>
-  <label>Name</label>
-  <input id="name" type = "text" formControlName = "name">
-</div>
-<div>
-  <label>Address</label>
-  <input id="address" type = "text" formControlName = "address">
-</div>
+<form [formGroup] = "checkoutForm" (ngSubmit) = "onSubmit()">
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-	<button class = "button" type = "submit">Purchase</button>
+  <div>
+    <label for ="name">
+      Name
+    </label>
+    <input id="name" type= "text" formControlName = "name" >
+  </div>
+
+  <div>
+    <label for= "address">
+      Address
+    </label>
+    <input id="address" type= "text" formControlName = "address" >
+  </div>
+
+  <button class= "button" type = "submit"> Purchase </button>
 </form>

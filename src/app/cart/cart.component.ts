@@ -1,39 +1,47 @@
-import { Component, OnInit } from "@angular/core";
-import { CartService } from "../cart.service";
-import { FormBuilder, Validator } from "@angular/forms";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-cart",
-  templateUrl: "./cart.component.html",
-  styleUrls: ["./cart.component.css"]
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+
   items = this.cartService.getItems();
   checkoutForm = this.formBuilder.group({
-    name: "",
-    address: ""
-  });
-
+    name: '',
+    address: ''
+  })
+  
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit() {}
-
-  routeToError() {
-    this.router.navigateByUrl("error");
+  ngOnInit() {
   }
 
-  onSubmit(): void {
+  routeTo400(){
+    this.router.navigateByUrl('page-not-found');
+  }
+
+  routeTo500(){
+    this.router.navigateByUrl('internal-server-error');
+  }
+
+  routeToGenericError(){
+    this.router.navigateByUrl('error');
+  }
+
+  onSubmit(): void{
+    //Clear the Cart
     this.items = this.cartService.clearCart();
-    console.warn(
-      "Items Submitted",
-      this.checkoutForm.value,
-      this.checkoutForm.value
-    );
+    console.warn('Your oder has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
   }
+
 }
