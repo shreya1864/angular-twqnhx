@@ -1,5 +1,5 @@
 <h3>Cart</h3>
-<a (click) = "routeToError()"> Error Route</a>
+<a (click)="routeToError()"> Error Route</a>
 
 <p>
 	<a routerLink="/shipping">Shipping Prices</a>
@@ -9,3 +9,16 @@
 	<span> {{ item.name }} </span>
 	<span> {{ item.price | currency }} </span>
 </div>
+
+<div>
+  <label>Name</label>
+  <input id="name" type = "text" formControlName = "name">
+</div>
+<div>
+  <label>Address</label>
+  <input id="address" type = "text" formControlName = "address">
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+	<button class = "button" type = "submit">Purchase</button>
+</form>
